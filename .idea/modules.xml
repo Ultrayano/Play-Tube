@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Play-Tube.iml" filepath="$PROJECT_DIR$/Play-Tube.iml" />
-      <module fileurl="file://C:\work\Play-Tube\PlayTube.iml" filepath="C:\work\Play-Tube\PlayTube.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
