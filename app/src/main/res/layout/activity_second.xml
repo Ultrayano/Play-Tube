@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/windowBackground"
-    tools:context="ch.playtube.MainActivity"
+    tools:context="ch.playtube.SecondActivity"
     android:orientation="vertical">
 
     <!--Toolbar on top of app which says "Play!Tube"-->
@@ -25,7 +25,6 @@
         android:layout_height="50dp"
         android:layout_marginStart="180dp"
         android:inputType="text"/>
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="50dp"
@@ -40,7 +39,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/home"
-            android:enabled="false"
+            android:clickable="true"
+            android:focusable="true"
             style="?android:attr/buttonBarStyle"/>
 
         <View
@@ -65,8 +65,7 @@
             android:id="@+id/second_page"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:focusable="true"
+            android:enabled="false"
             android:text="@string/playlists"
             style="?android:attr/buttonBarStyle"/>
 
