@@ -2,6 +2,12 @@ package ch.playtube;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import ch.playtube.Controller.HomeController;
+import ch.playtube.Model.VideoEntry;
+
 import static org.junit.Assert.*;
 
 /**
@@ -12,6 +18,9 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+        HomeController hc = new HomeController();
+        List<VideoEntry> ve =  new ArrayList<>();
+        ve = hc.getList();
+        assertEquals(ve, ve);
     }
 }

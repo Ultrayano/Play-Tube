@@ -8,7 +8,8 @@
     tools:context="ch.playtube.MainActivity">
 
     <include layout="@layout/content_main"
-        android:layout_height="423dp" />
+        android:layout_height="423dp"
+        android:layout_width="4dp" />
 
     <!--Toolbar on top of app which says "Play!Tube"-->
     <android.support.v7.widget.Toolbar
