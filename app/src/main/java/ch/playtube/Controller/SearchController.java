@@ -53,7 +53,7 @@ public class SearchController {
             }).setApplicationName("Youtube-Feed").build();
 
             // Prompt the user to enter a query term.
-            String queryTerm = ;
+            String queryTerm = "FILLER";
 
             // Define the API request for retrieving search results.
             YouTube.Search.List search = youtube.search().list("id,snippet");
