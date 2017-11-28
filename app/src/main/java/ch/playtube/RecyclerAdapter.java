@@ -49,7 +49,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VideoI
             }
         };
 
-        holder.youTubeThumbnailView.initialize(Resources.KEY, new YouTubeThumbnailView.OnInitializedListener() {
+        holder.youTubeThumbnailView.initialize(DeveloperKey.DEVELOPER_KEY, new YouTubeThumbnailView.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubeThumbnailView youTubeThumbnailView, YouTubeThumbnailLoader youTubeThumbnailLoader) {
 
@@ -86,7 +86,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VideoI
         @Override
         public void onClick(View v) {
 
-            Intent intent = YouTubeStandalonePlayer.createVideoIntent((Activity) ctx, Resources.KEY, VideoID[getLayoutPosition()]);
+            Intent intent = YouTubeStandalonePlayer.createVideoIntent((Activity) ctx, DeveloperKey.DEVELOPER_KEY, VideoID[getLayoutPosition()]);
             ctx.startActivity(intent);
         }
     }
