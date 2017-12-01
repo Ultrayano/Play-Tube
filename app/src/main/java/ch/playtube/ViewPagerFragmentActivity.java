@@ -5,6 +5,7 @@ import java.util.Vector;
 
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -34,6 +35,11 @@ public class ViewPagerFragmentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.viewpager_layout);
+
+        //Inherits Threadexception
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
         //initialize the pager
         this.initialisePaging();
 
