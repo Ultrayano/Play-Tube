@@ -9,9 +9,6 @@ import org.junit.runner.RunWith;
 
 import java.util.List;
 
-import ch.playtube.Controller.HomeController;
-import ch.playtube.Model.VideoEntry;
-
 import static org.junit.Assert.*;
 
 /**

@@ -5,9 +5,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import ch.playtube.Controller.HomeController;
-import ch.playtube.Model.VideoEntry;
-
 import static org.junit.Assert.*;
 
 /**

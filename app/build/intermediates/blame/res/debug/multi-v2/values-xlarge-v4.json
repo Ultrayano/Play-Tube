@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\GIBB\\Play-Tube\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-v4\\values-xlarge-v4.xml",
+            "outputFile": "C:\\work\\Play-Tube\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-v4\\values-xlarge-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ue70633\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\482139611213c5e52599fb1cdd3f49a1\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
+                    "source": "C:\\Users\\LLi.IMS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\515268dc9606020530edbc3c65771c90\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",
