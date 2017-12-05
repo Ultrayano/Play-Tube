@@ -1,5 +1,6 @@
 package ch.playtube.Controller;
 
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
@@ -19,6 +20,7 @@ import java.util.Properties;
 
 import ch.playtube.Model.VideoEntry;
 import ch.playtube.Services.Auth;
+import ch.playtube.ViewPagerFragmentActivity;
 
 /**
  * Created by ue70633 on 21.11.2017.
@@ -53,7 +55,7 @@ public class SearchController {
             }).setApplicationName("Youtube-Feed").build();
 
             // Prompt the user to enter a query term.
-            String queryTerm = "FILLER";
+            String queryTerm = "";
 
             // Define the API request for retrieving search results.
             YouTube.Search.List search = youtube.search().list("id,snippet");

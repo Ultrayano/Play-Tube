@@ -34,5 +34,9 @@ dependencies {
     testCompile 'junit:junit:4.12'
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support:design:26.1.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'pub.devrel:easypermissions:0.3.0'
+    compile 'com.facebook.network.connectionclass:connectionclass:1.0.1' //this lib include jsr501
+    compile 'com.github.HaarigerHarald:android-youtubeExtractor:master-SNAPSHOT'
 }
 
