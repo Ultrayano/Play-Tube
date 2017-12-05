@@ -85,6 +85,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     private SearchFragment searchFragment;
 
     private int[] tabIcons = {
+            R.drawable.ic_action_heart,
+            R.drawable.ic_recently_wached,
             R.drawable.ic_search,
             R.drawable.ic_action_playlist
     };
