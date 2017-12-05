@@ -7,6 +7,11 @@ import android.support.test.runner.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.List;
+
+import ch.playtube.Controller.HomeController;
+import ch.playtube.Model.VideoEntry;
+
 import static org.junit.Assert.*;
 
 /**
@@ -21,6 +26,8 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("ch.playtube", appContext.getPackageName());
+        HomeController hc = new HomeController();
+        List<VideoEntry> yl = hc.getList();
+        assertEquals(yl, yl);
     }
 }

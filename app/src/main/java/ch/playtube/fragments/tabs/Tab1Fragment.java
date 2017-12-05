@@ -19,6 +19,6 @@ public class Tab1Fragment extends Fragment {
 
             return null;
         }
-        return (LinearLayout)inflater.inflate(R.layout.tab_frag1_layout, container, false);
+        return inflater.inflate(R.layout.tab_frag1_layout, container, false);
     }
 }
