@@ -38,14 +38,10 @@ import ch.playtube.model.ItemType;
 import ch.playtube.model.YouTubeVideo;
 import ch.playtube.utils.Config;
 
-/**
- * Service class for background youtube playback
- * Created by Stevan Medic on 9.3.16..
- */
 public class BackgroundAudioService extends Service implements MediaPlayer.OnCompletionListener,
         MediaPlayer.OnPreparedListener {
 
-    private static final String TAG = "SMEDIC service";
+    private static final String TAG = "Play!Tube service";
 
     public static final String ACTION_PLAY = "action_play";
     public static final String ACTION_PAUSE = "action_pause";
@@ -66,7 +62,7 @@ public class BackgroundAudioService extends Service implements MediaPlayer.OnCom
 
     private ArrayList<YouTubeVideo> youTubeVideos;
 
-    private NotificationCompat.Builder builder = null;
+    public NotificationCompat.Builder builder = null;
 
     private DeviceBandwidthSampler deviceBandwidthSampler;
     private ConnectionQuality connectionQuality = ConnectionQuality.MODERATE;
@@ -287,7 +283,7 @@ public class BackgroundAudioService extends Service implements MediaPlayer.OnCom
         builder.setShowWhen(false);
         builder.setContentIntent(clickPendingIntent);
         builder.setDeleteIntent(stopPendingIntent);
-        builder.setOngoing(false);
+        builder.setOngoing(true);
         builder.setSubText(videoItem.getViewCount());
         builder.setStyle(style);
 
@@ -301,6 +297,7 @@ public class BackgroundAudioService extends Service implements MediaPlayer.OnCom
         builder.addAction(generateAction(android.R.drawable.ic_media_previous, "Previous", ACTION_PREVIOUS));
         builder.addAction(action);
         builder.addAction(generateAction(android.R.drawable.ic_media_next, "Next", ACTION_NEXT));
+        builder.addAction(generateAction(android.R.drawable.ic_delete, "Stop", ACTION_STOP));
         style.setShowActionsInCompactView(0, 1, 2);
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);

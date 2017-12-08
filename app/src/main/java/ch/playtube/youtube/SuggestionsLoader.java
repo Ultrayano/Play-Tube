@@ -20,13 +20,9 @@ import java.util.List;
 
 import static ch.playtube.utils.Config.SUGGESTIONS_URL;
 
-/**
- * Created by smedic on 13.2.17..
- */
-
 public class SuggestionsLoader extends AsyncTaskLoader<List<String>> {
 
-    private static final String TAG = "SMEDIC JsonAsyncTask";
+    private static final String TAG = "Play!Tube JsonAsyncTask";
 
     private static final int JSON_ERROR = 0;
     private static final int JSON_ARRAY = 1;

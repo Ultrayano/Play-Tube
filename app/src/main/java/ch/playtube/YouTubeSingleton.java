@@ -13,9 +13,6 @@ import java.util.Arrays;
 
 import static ch.playtube.utils.Auth.SCOPES;
 
-/**
- * Created by smedic on 5.3.17..
- */
 public class YouTubeSingleton {
 
     private static YouTube youTube;

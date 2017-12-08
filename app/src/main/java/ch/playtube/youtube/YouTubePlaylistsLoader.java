@@ -23,13 +23,10 @@ import ch.playtube.utils.Config;
 import static ch.playtube.YouTubeSingleton.getCredential;
 import static ch.playtube.YouTubeSingleton.getYouTubeWithCredentials;
 
-/**
- * Created by smedic on 13.2.17..
- */
 
 public class YouTubePlaylistsLoader extends AsyncTaskLoader<List<YouTubePlaylist>> {
 
-    private static final String TAG = "SMEDIC";
+    private static final String TAG = "Play!Tube";
     private YouTube youtube = getYouTubeWithCredentials();
 
     public YouTubePlaylistsLoader(Context context) {

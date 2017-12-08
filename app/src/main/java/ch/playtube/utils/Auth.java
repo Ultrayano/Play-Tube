@@ -1,10 +1,5 @@
 package ch.playtube.utils;
 
-/**
- * Created by Stevan Medic on 7.3.16..
- */
-
-
 import com.google.api.services.youtube.YouTubeScopes;
 
 /**

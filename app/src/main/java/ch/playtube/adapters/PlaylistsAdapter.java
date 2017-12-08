@@ -1,9 +1,5 @@
 package ch.playtube.adapters;
 
-/**
- * Created by smedic on 6.2.17..
- */
-
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

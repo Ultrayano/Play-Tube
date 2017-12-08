@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/timer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+>
+    <TextView
+        android:id="@+id/timertext1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53dp"
+        android:textSize="40sp"
+        android:text="Set Timer for" />
+
+    <EditText
+        android:id="@+id/timePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_centerHorizontal="true"
+        android:ems="3"
+        android:textSize="50sp"
+        android:layout_below="@+id/timertext1"
+        android:inputType="time"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/timertext2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/timePicker"
+        android:textSize="40sp"
+        android:text="Minutes" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timertext2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp">
+
+
+
+        <TextView
+            android:id="@+id/timer_onoff"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/timer_off"
+            android:textSize="50sp"/>
+
+        <Switch
+            android:id="@+id/timer_switch"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

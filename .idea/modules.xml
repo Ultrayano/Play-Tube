@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Play-Tube.iml" filepath="$PROJECT_DIR$/Play-Tube.iml" />
+      <module fileurl="file://D:\devsbb\code\PlayTube\Play-Tube.iml" filepath="D:\devsbb\code\PlayTube\Play-Tube.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PlayTube.iml" filepath="$PROJECT_DIR$/PlayTube.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

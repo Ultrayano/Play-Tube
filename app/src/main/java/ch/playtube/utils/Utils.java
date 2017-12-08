@@ -9,13 +9,9 @@ import java.util.List;
 
 import ch.playtube.model.YouTubeVideo;
 
-/**
- * Helper methods
- * Created by smedic on 4.2.16..
- */
 public class Utils {
 
-    private static final String TAG = "SMEDIC JSON";
+    private static final String TAG = "Play!Tube JSON";
 
     /**
      * Converting ISO8601 formatted duration to normal readable time

@@ -21,13 +21,9 @@ import ch.playtube.model.YouTubeVideo;
 import ch.playtube.utils.Config;
 import ch.playtube.utils.Utils;
 
-/**
- * Created by smedic on 13.2.17..
- */
-
 public class YouTubeVideosLoader extends AsyncTaskLoader<List<YouTubeVideo>> {
 
-    private static final String TAG = "SMEDIC";
+    private static final String TAG = "Play!Tube";
 
     private YouTube youtube = YouTubeSingleton.getYouTube();
     private String keywords;

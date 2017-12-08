@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e9e9e9">
+    android:background="@color/windowBackground">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/fragment_list_items"
@@ -21,7 +21,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/nothing_found" />
+            android:src="@drawable/ic_search" />
 
         <TextView
             android:layout_width="wrap_content"

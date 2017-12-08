@@ -3,10 +3,6 @@ package ch.playtube;
 import android.app.Application;
 import android.content.Context;
 
-/**
- * Created by smedic on 5.3.17..
- */
-
 public class YTApplication extends Application {
 
     private static Context mContext;

@@ -24,13 +24,9 @@ import ch.playtube.utils.Utils;
 
 import static ch.playtube.YouTubeSingleton.getInstance;
 
-/**
- * Created by smedic on 5.3.17..
- */
-
 public class YouTubePlaylistVideosLoader extends AsyncTaskLoader<List<YouTubeVideo>> {
 
-    private final static String TAG = "SMEDIC";
+    private final static String TAG = "Play!Tube";
     private YouTube youtube = getInstance().getYouTube();
     private String playlistId;
 

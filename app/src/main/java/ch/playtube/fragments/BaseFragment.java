@@ -3,10 +3,6 @@ package ch.playtube.fragments;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 
-/**
- * Created by smedic on 9.2.17..
- */
-
 public abstract class BaseFragment extends Fragment {
 
     protected void share(String url) {

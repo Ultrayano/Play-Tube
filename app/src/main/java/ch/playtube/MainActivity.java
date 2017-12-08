@@ -1,18 +1,3 @@
-/*
- * Copyright (C) 2016 SMedic
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package ch.playtube;
 
 import android.Manifest;
@@ -48,6 +33,7 @@ import java.util.List;
 
 import ch.playtube.database.YouTubeSqlDb;
 import ch.playtube.fragments.SearchFragment;
+import ch.playtube.fragments.TimerFragment;
 import ch.playtube.interfaces.OnItemSelected;
 import ch.playtube.model.ItemType;
 import ch.playtube.model.YouTubeVideo;
@@ -57,6 +43,7 @@ import ch.playtube.youtube.SuggestionsLoader;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
+import static ch.playtube.R.layout.activity_main;
 import static ch.playtube.R.layout.suggestions;
 import static ch.playtube.YouTubeSingleton.getCredential;
 
@@ -66,7 +53,7 @@ import static ch.playtube.YouTubeSingleton.getCredential;
 public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks,
         OnItemSelected {
 
-    private static final String TAG = "SMEDIC MAIN ACTIVITY";
+    private static final String TAG = "Play!Tube MAIN ACTIVITY";
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -83,12 +70,11 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     private int initialColors[] = new int[2];
 
     private SearchFragment searchFragment;
+    private TimerFragment timerFragment;
 
     private int[] tabIcons = {
-            R.drawable.ic_action_heart,
-            R.drawable.ic_recently_wached,
             R.drawable.ic_search,
-            R.drawable.ic_action_playlist
+            R.drawable.ic_recently_wached
     };
 
     private NetworkConf networkConf;
@@ -117,6 +103,10 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         setupTabIcons();
 
         requestPermissions();
+
+        if (getIntent().getBooleanExtra("EXIT", false)) {
+            finish();
+        }
     }
 
     /**
@@ -213,7 +203,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     }
 
     private void setupTabIcons() {
-        tabLayout.getTabAt(0).setIcon(tabIcons[3]);
+        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
+        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -221,8 +212,11 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         searchFragment = SearchFragment.newInstance();
+        timerFragment = TimerFragment.newInstance();
 
         adapter.addFragment(searchFragment, null);
+        adapter.addFragment(timerFragment, null);
+
         viewPager.setAdapter(adapter);
     }
 
