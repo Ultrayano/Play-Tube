@@ -1,6 +1,7 @@
 package ch.playtube.fragments;
 
 import android.app.NotificationManager;
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +17,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import ch.playtube.BackgroundAudioService;
 
+import ch.playtube.MainActivity;
 import ch.playtube.R;
+
+import static ch.playtube.BackgroundAudioService.ACTION_STOP;
 
 public class TimerFragment extends Fragment {
 
@@ -35,7 +39,7 @@ public class TimerFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.timer, container, false);
         timer_switch = (Switch) v.findViewById(R.id.timer_switch);
@@ -48,7 +52,7 @@ public class TimerFragment extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 int timerTime = Integer.parseInt(timePicker.getText().toString());
                 int displayTime = timerTime;
-                timerTime = timerTime *1000 *60;
+                timerTime = timerTime *1000 * 60;
                 if(isChecked) {
                     timer_onoff.setText("ON");
                     new CountDownTimer(timerTime, 1000) {
@@ -58,6 +62,7 @@ public class TimerFragment extends Fragment {
                         }
 
                         public void onFinish() {
+                            android.os.Process.killProcess(android.os.Process.myPid());
                             System.exit(0);
                         }
 

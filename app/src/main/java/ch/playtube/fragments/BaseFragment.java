@@ -5,14 +5,6 @@ import android.support.v4.app.Fragment;
 
 public abstract class BaseFragment extends Fragment {
 
-    protected void share(String url) {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT, url);
-        intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Check out this song!");
-        startActivity(Intent.createChooser(intent, "Share"));
-    }
-
     @Override
     public void setUserVisibleHint(boolean visible) {
         super.setUserVisibleHint(visible);

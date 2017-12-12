@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
 
-            viewPager.setCurrentItem(2, true); //switch to search fragment
+            viewPager.setCurrentItem(0, true); //switch to search fragment
 
             if (searchFragment != null) {
                 searchFragment.searchQuery(query);

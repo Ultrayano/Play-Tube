@@ -50,7 +50,7 @@ public class BackgroundAudioService extends Service implements MediaPlayer.OnCom
     public static final String ACTION_STOP = "action_stop";
 
     private MediaPlayer mMediaPlayer;
-    private MediaSessionCompat mSession;
+    public MediaSessionCompat mSession;
     private MediaControllerCompat mController;
 
     private ItemType mediaType = ItemType.YOUTUBE_MEDIA_NONE;
