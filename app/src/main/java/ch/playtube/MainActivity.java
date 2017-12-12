@@ -58,15 +58,10 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     private ViewPager viewPager;
 
     private static final int PERMISSIONS = 1;
-    private static final String PREF_BACKGROUND_COLOR = "BACKGROUND_COLOR";
-    private static final String PREF_TEXT_COLOR = "TEXT_COLOR";
     public static final String PREF_ACCOUNT_NAME = "accountName";
 
     static final int REQUEST_ACCOUNT_PICKER = 1000;
     static final int REQUEST_PERMISSION_GET_ACCOUNTS = 1003;
-
-    private int initialColor = 0xffff0040;
-    private int initialColors[] = new int[2];
 
     private SearchFragment searchFragment;
     private TimerFragment timerFragment;
