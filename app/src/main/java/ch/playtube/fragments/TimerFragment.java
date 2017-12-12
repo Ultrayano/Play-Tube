@@ -1,9 +1,5 @@
 package ch.playtube.fragments;
 
-import android.app.NotificationManager;
-import android.app.Service;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
@@ -15,12 +11,9 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import ch.playtube.BackgroundAudioService;
-
-import ch.playtube.MainActivity;
 import ch.playtube.R;
-
-import static ch.playtube.BackgroundAudioService.ACTION_STOP;
 
 public class TimerFragment extends Fragment {
 
@@ -42,9 +35,9 @@ public class TimerFragment extends Fragment {
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.timer, container, false);
-        timer_switch = (Switch) v.findViewById(R.id.timer_switch);
-        timer_onoff = (TextView) v.findViewById(R.id.timer_onoff);
-        timePicker = (EditText) v.findViewById(R.id.timePicker);
+        timer_switch = v.findViewById(R.id.timer_switch);
+        timer_onoff = v.findViewById(R.id.timer_onoff);
+        timePicker = v.findViewById(R.id.timePicker);
 
 
         timer_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

@@ -18,16 +18,15 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import ch.playtube.YouTubeSingleton;
 import ch.playtube.model.YouTubeVideo;
 import ch.playtube.utils.Config;
 import ch.playtube.utils.Utils;
 
-import static ch.playtube.YouTubeSingleton.getInstance;
-
 public class YouTubePlaylistVideosLoader extends AsyncTaskLoader<List<YouTubeVideo>> {
 
     private final static String TAG = "Play!Tube";
-    private YouTube youtube = getInstance().getYouTube();
+    private YouTube youtube = YouTubeSingleton.getYouTube();
     private String playlistId;
 
     public YouTubePlaylistVideosLoader(Context context, String playlistId) {

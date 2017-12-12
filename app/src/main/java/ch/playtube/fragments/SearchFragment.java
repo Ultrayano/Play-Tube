@@ -59,13 +59,13 @@ public class SearchFragment extends BaseFragment implements ItemEventsListener<Y
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_list, container, false);
-        videosFoundListView = (RecyclerView) v.findViewById(R.id.fragment_list_items);
+        videosFoundListView = v.findViewById(R.id.fragment_list_items);
         videosFoundListView.setLayoutManager(new LinearLayoutManager(context));
-        loadingProgressBar = (ProgressBar) v.findViewById(R.id.fragment_progress_bar);
+        loadingProgressBar = v.findViewById(R.id.fragment_progress_bar);
         videoListAdapter = new VideosAdapter(context, searchResultsList);
         videoListAdapter.setOnItemEventsListener(this);
         videosFoundListView.setAdapter(videoListAdapter);
-        nothingFoundMessageHolder = (RelativeLayout) v.findViewById(R.id.nothing_found_holder);
+        nothingFoundMessageHolder = v.findViewById(R.id.nothing_found_holder);
         //disable swipe to refresh for this tab
         return v;
     }

@@ -43,7 +43,6 @@ import ch.playtube.youtube.SuggestionsLoader;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
-import static ch.playtube.R.layout.activity_main;
 import static ch.playtube.R.layout.suggestions;
 import static ch.playtube.YouTubeSingleton.getCredential;
 
@@ -86,16 +85,16 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
         YouTubeSqlDb.getInstance().init(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager = findViewById(R.id.viewpager);
         viewPager.setOffscreenPageLimit(3);
         setupViewPager(viewPager);
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
         networkConf = new NetworkConf(this);

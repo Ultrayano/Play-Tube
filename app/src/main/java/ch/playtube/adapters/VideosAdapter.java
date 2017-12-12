@@ -44,11 +44,7 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.ViewHolder
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         final YouTubeVideo video = list.get(position);
-        if (YouTubeSqlDb.getInstance().videos(YouTubeSqlDb.VIDEOS_TYPE.FAVORITE).checkIfExists(video.getId())) {
-            itemChecked[position] = true;
-        } else {
-            itemChecked[position] = false;
-        }
+        itemChecked[position] = YouTubeSqlDb.getInstance().videos(YouTubeSqlDb.VIDEOS_TYPE.FAVORITE).checkIfExists(video.getId());
 
         Picasso.with(context).load(video.getThumbnailURL()).into(holder.thumbnail);
         holder.title.setText(video.getTitle());
@@ -78,10 +74,10 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.ViewHolder
 
         public ViewHolder(View itemView) {
             super(itemView);
-            thumbnail = (ImageView) itemView.findViewById(R.id.video_thumbnail);
-            title = (TextView) itemView.findViewById(R.id.video_title);
-            duration = (TextView) itemView.findViewById(R.id.video_duration);
-            viewCount = (TextView) itemView.findViewById(R.id.views_number);
+            thumbnail = itemView.findViewById(R.id.video_thumbnail);
+            title = itemView.findViewById(R.id.video_title);
+            duration = itemView.findViewById(R.id.video_duration);
+            viewCount = itemView.findViewById(R.id.views_number);
         }
     }
 
