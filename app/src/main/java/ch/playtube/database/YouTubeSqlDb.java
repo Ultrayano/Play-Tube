@@ -48,20 +48,6 @@ public class YouTubeSqlDb {
         favoriteVideos = new Videos(FAVORITES_TABLE_NAME);
     }
 
-    public Videos videos(VIDEOS_TYPE type) {
-        if (type == VIDEOS_TYPE.FAVORITE) {
-            return favoriteVideos;
-        } else if (type == VIDEOS_TYPE.RECENTLY_WATCHED) {
-            return recentlyWatchedVideos;
-        }
-        Log.e(TAG, "Error. Unknown video type!");
-        return null;
-    }
-
-    public Playlists playlists() {
-        return playlists;
-    }
-
     private final class YouTubeDbHelper extends SQLiteOpenHelper {
         public YouTubeDbHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -69,15 +55,11 @@ public class YouTubeSqlDb {
 
         @Override
         public void onCreate(SQLiteDatabase db) {
-            db.execSQL(YouTubeVideoEntry.DATABASE_FAVORITES_TABLE_CREATE);
-            db.execSQL(YouTubeVideoEntry.DATABASE_RECENTLY_WATCHED_TABLE_CREATE);
             db.execSQL(YouTubePlaylistEntry.DATABASE_TABLE_CREATE);
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            db.execSQL(YouTubeVideoEntry.DROP_QUERY_RECENTLY_WATCHED);
-            db.execSQL(YouTubeVideoEntry.DROP_QUERY_FAVORITES);
             db.execSQL(YouTubePlaylistEntry.DROP_QUERY);
             onCreate(db);
         }
@@ -138,32 +120,6 @@ public class YouTubeSqlDb {
             }
             cursor.close();
             return true;
-        }
-
-        /**
-         * Reads all recentlyWatchedVideos from playlists database
-         *
-         * @return
-         */
-        public ArrayList<YouTubeVideo> readAll() {
-
-            final String SELECT_QUERY_ORDER_DESC = "SELECT * FROM " + tableName + " ORDER BY "
-                    + YouTubeVideoEntry.COLUMN_ENTRY_ID + " DESC";
-
-            SQLiteDatabase db = dbHelper.getReadableDatabase();
-            ArrayList<YouTubeVideo> list = new ArrayList<>();
-
-            Cursor c = db.rawQuery(SELECT_QUERY_ORDER_DESC, null);
-            while (c.moveToNext()) {
-                String videoId = c.getString(c.getColumnIndexOrThrow(YouTubeVideoEntry.COLUMN_VIDEO_ID));
-                String title = c.getString(c.getColumnIndexOrThrow(YouTubeVideoEntry.COLUMN_TITLE));
-                String duration = c.getString(c.getColumnIndexOrThrow(YouTubeVideoEntry.COLUMN_DURATION));
-                String thumbnailUrl = c.getString(c.getColumnIndexOrThrow(YouTubeVideoEntry.COLUMN_THUMBNAIL_URL));
-                String viewsNumber = c.getString(c.getColumnIndexOrThrow(YouTubeVideoEntry.COLUMN_VIEWS_NUMBER));
-                list.add(new YouTubeVideo(videoId, title, thumbnailUrl, duration, viewsNumber));
-            }
-            c.close();
-            return list;
         }
 
         /**
